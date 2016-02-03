@@ -23,5 +23,8 @@ const SCHEMA: Object = {
 };
 
 const MOVIE_SCHEMA: mongoose.Schema = new mongoose.Schema(SCHEMA, SCHEMA_OPTIONS);
+MOVIE_SCHEMA.static("test", () => {
+  return this.findOne({});
+});
 
 export default mongoose.model<IMovieModel>("Movie", MOVIE_SCHEMA);

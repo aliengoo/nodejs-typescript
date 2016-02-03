@@ -41,7 +41,7 @@ router.delete("/movie/:id", deleteMovieById);
 router.post("/movie", (req: express.Request, res: express.Response): void => {
   let movie: IMovieModel = new Movie(req.body);
 
-  movie.save().then(() => {
+  movie.save(() => {
     res.send(movie);
   });
 });
