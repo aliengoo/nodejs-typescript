@@ -11,7 +11,7 @@ class HelloResponse {
 }
 
 router.get("/hello", (req: express.Request, res: express.Response) => {
-  res.send(new HelloResponse("Hello, World!!!!!"));
+  res.send(new HelloResponse("Hello, World!"));
 });
 
 export default router;

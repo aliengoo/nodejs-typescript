@@ -27,11 +27,18 @@ const config = {
   server: {
     start: {
       path: "server/index.js",
-      delay: 600,
+
+      // adding a delay seems to allow time
+      // for the debugger to detach, which prevents EADDRINUSE errors
+      delay: 500,
+      execArgv: ['--harmony', '--debug=5858'],
       env: {
         PORT: 3000,
         NODE_ENV: "development"
-      }
+      },
+
+      // default is SIGTERM, but that's not supported on windows
+      killSignal: "SIGINT"
     },
     restart: {
       watch: ["server/**/*.js"]
@@ -47,10 +54,10 @@ gulp.task("lint", () => {
 
 gulp.task("build", ["lint"], () => {
   return gulp.src(config.build.src)
+    .pipe(lp.sourcemaps.init())
     .pipe(lp.typescript(config.build.tsProject))
-    .pipe(gulp.dest(config.build.dest)).on('end', () => {
-      lp.developServer.restart();
-    });
+    .pipe(lp.sourcemaps.write())
+    .pipe(gulp.dest(config.build.dest)).on('end', lp.developServer.restart);
 });
 
 gulp.task("server:start", () => {
@@ -59,6 +66,5 @@ gulp.task("server:start", () => {
 
 gulp.task("default", ["build", "server:start"], () => {
   gulp.watch(config.build.src, ["build"]);
-  //gulp.watch(config.server.restart.watch, lp.developServer.restart);
 });
 
