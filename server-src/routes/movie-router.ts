@@ -1,9 +1,9 @@
 "use strict";
 
 import * as express from "express";
-import MovieModel  from "../db/models/MovieModel";
+import MovieModel  from "../db/models/movie/MovieModel";
+import {IMovie} from "../db/models/movie/IMovie";
 import {Query} from "mongoose";
-import {IMovie} from "../db/models/IMovie";
 
 let router: express.Router = express.Router();
 

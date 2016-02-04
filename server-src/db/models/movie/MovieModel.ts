@@ -24,7 +24,6 @@ const SCHEMA: Object = {
 
 const MOVIE_SCHEMA: mongoose.Schema = new mongoose.Schema(SCHEMA, SCHEMA_OPTIONS);
 
-
 MOVIE_SCHEMA.static("findByTitle", function (title: String): Promise<IMovie> {
   return this.findOne({
     title
