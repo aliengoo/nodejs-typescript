@@ -1,0 +1,9 @@
+//@import "partials/base";
+@import "foundation/scss/foundation";
+@include foundation-everything(true);
+@import "partials/shame";
+@import "partials/state";
+
+// modules (or react components)
+/* inject:imports */
+/* endinject */

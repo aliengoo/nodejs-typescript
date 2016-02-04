@@ -25,6 +25,27 @@
     },
     "q/Q.d.ts": {
       "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "react/react.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "react-router/history.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "foundation/foundation.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
+    },
+    "helmet/helmet.d.ts": {
+      "commit": "e69fe60f2d6377ea4fae539493997b098f52cad1"
     }
   }
 }
