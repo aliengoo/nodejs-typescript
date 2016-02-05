@@ -27,7 +27,7 @@ const config = {
   html: {
     src: "client-src/html/index.html",
     dest: "public",
-    watch: ["src/html/**"]
+    watch: ["client-src/html/**"]
   },
   build: {
     js: {
@@ -189,7 +189,7 @@ gulp.task("server:start", () => {
   lp.developServer.listen(config.server.start);
 });
 
-gulp.task("default", ["fonts", "build:sass", "build:js:server", "build:js:client", "html"], () => {
+gulp.task("default", ["build:sass", "build:js:server", "build:js:client", "html"], () => {
   lp.livereload({
     start: true
   });
